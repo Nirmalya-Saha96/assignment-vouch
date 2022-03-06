@@ -51,7 +51,62 @@
   
   **Fetch details of single contact.**
   
-  - POST -> 
+  - GET -> localhost:5000/api/contact/{id}
+  [note id should be contact object id of mongodb]
+  passing as headers ->
+  x-auth-token : <JWT-token>
+  
+  **Fetch phase matching results.**
+  
+  - POST -> localhost:5000/api/contact/phase/match
+    passing as a json to body [SAMPLE] ->
+  {
+    "name": "name3"
+  }
+  passing as headers ->
+  x-auth-token : <JWT-token>
+  
+  
+  **Fetch the list of contacts with pagination.**
+  
+  - GET -> localhost:5000/api/contact/pagination/user?pageNo=1&size=10
+  [note you can customise the query]
+  passing as headers ->
+  x-auth-token : <JWT-token>
+  
+  **Update the given contact.**
+  
+  - POST -> localhost:5000/api/contact/update/{id}
+  [note id should be contact object id of mongodb]
+     passing as a json to body [SAMPLE] ->
+  {
+    "name": "updated_name",
+    "phone_no": "1234567890"
+}
+  passing as headers ->
+  x-auth-token : <JWT-token>
+  
+  
+  **Delete the given contact.**
+  
+  - DELETE -> localhost:5000/api/contact/delete/{id}
+  [note id should be contact object id of mongodb]
+   passing as headers ->
+  x-auth-token : <JWT-token>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
