@@ -24,13 +24,13 @@
 **Add a new contact**
 
  - POST -> localhost:5000/api/contact 
-  passing as a json to body ->
-  {
-    "name": "<name>",
-    "phone_no": "<phone number>"
+  passing as a json to body [SAMPLE] ->
+   {
+    "name": "name",
+    "phone_no": "phone number"
   }
   passing as headers ->
-  x-auth-token : <JWT-token>
+  x-auth-token : JWT-token received from localhost:5000/api/authenticate
   
   **Add bulk contacts.**
   
@@ -47,7 +47,7 @@
     }
 ]
   passing as headers ->
-  x-auth-token : <JWT-token>
+  x-auth-token : JWT-token received from localhost:5000/api/authenticate
   
   **Fetch details of single contact.**
   
@@ -64,7 +64,7 @@
     "name": "name3"
   }
   passing as headers ->
-  x-auth-token : <JWT-token>
+ x-auth-token : JWT-token received from localhost:5000/api/authenticate
   
   
   **Fetch the list of contacts with pagination.**
@@ -72,7 +72,7 @@
   - GET -> localhost:5000/api/contact/pagination/user?pageNo=1&size=10
   [note you can customise the query]
   passing as headers ->
-  x-auth-token : <JWT-token>
+x-auth-token : JWT-token received from localhost:5000/api/authenticate
   
   **Update the given contact.**
   
@@ -84,7 +84,7 @@
     "phone_no": "1234567890"
 }
   passing as headers ->
-  x-auth-token : <JWT-token>
+x-auth-token : JWT-token received from localhost:5000/api/authenticate
   
   
   **Delete the given contact.**
@@ -92,12 +92,16 @@
   - DELETE -> localhost:5000/api/contact/delete/{id}
   [note id should be contact object id of mongodb]
    passing as headers ->
-  x-auth-token : <JWT-token>
+  x-auth-token : JWT-token received from localhost:5000/api/authenticate
   
   
   
-  
-  
+# TECH STACK
+  - nodejs
+  - mongodb
+  - expressjs
+  - express validator
+  - JWT-token
   
   
   
